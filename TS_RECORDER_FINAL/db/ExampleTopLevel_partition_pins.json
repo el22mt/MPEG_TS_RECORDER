@@ -1,0 +1,293 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[9]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_CLOCK_OUT",
+					"strict" : false
+				},
+				{
+					"name" : "TS_VALID_OUT",
+					"strict" : false
+				},
+				{
+					"name" : "TS_SYNC_OUT",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_OUT[0]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_OUT[1]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_OUT[2]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_OUT[3]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_OUT[4]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_OUT[5]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_OUT[6]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_OUT[7]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_0[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_0[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_0[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_0[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_0[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_0[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_1[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_1[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_1[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_1[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_1[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_1[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_1[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_2[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_2[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_2[2]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_2[3]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_2[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_2[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_2[6]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_3[0]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_3[1]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_3[4]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_3[5]",
+					"strict" : false
+				},
+				{
+					"name" : "HEX_3[6]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_CLOCK_IN",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "RESET_IN",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[7]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[9]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_VALID_IN",
+					"strict" : false
+				},
+				{
+					"name" : "TS_SYNC_IN",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_IN[0]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_IN[1]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_IN[2]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_IN[3]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_IN[4]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_IN[5]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_IN[6]",
+					"strict" : false
+				},
+				{
+					"name" : "TS_DATA_IN[7]",
+					"strict" : false
+				},
+				{
+					"name" : "PLAY_IN",
+					"strict" : false
+				},
+				{
+					"name" : "RECORD_IN",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
