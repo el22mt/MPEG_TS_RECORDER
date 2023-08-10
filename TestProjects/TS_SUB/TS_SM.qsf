@@ -38,7 +38,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY TEST_ALGO_2W_COUNT
+set_global_assignment -name TOP_LEVEL_ENTITY TEST_ALGO_2W
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:44:21  JUNE 27, 2023"
 set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
@@ -124,11 +124,11 @@ set_global_assignment -name EDA_TEST_BENCH_NAME BIT_SHIFT_TEST_TB -section_id ed
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id BIT_SHIFT_TEST_TB
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME BIT_SHIFT_TEST_TB -section_id BIT_SHIFT_TEST_TB
 set_global_assignment -name VERILOG_FILE BIT_SHIFT_TEST.v
+set_global_assignment -name VERILOG_FILE TEST_ALGO_2W_COUNT.v
 set_global_assignment -name EDA_TEST_BENCH_FILE TS_STATE_MACHINE_TB.v -section_id TS_STATE_MACHINE_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE BUTTON_REL_DET_TB.v -section_id BUTTON_REL_DET_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE TEST_ALGO_TB.v -section_id TEST_ALGO_TB
 set_global_assignment -name EDA_TEST_BENCH_FILE BIT_SHIFT_TEST_TB.v -section_id BIT_SHIFT_TEST_TB
-set_global_assignment -name VERILOG_FILE TEST_ALGO_2W_COUNT.v
 set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
 set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
 set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top

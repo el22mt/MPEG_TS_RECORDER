@@ -8,37 +8,37 @@ z2
 !i10f 100
 cModel Technology
 Z0 dC:/Users/marie/Workspace/TS_SUB/simulation
-vTEST_ALGO_2W_COUNT
-Z1 !s110 1691181194
+vTEST_ALGO_2W
+Z1 !s110 1691639268
 !i10b 1
-!s100 Okz5C_:::E32iRC7UHM`G3
-IZCe0bhcCFXVlf;gPVe5gR2
+!s100 ?5DMHP7n[;LR2@P5zD0PA1
+I8010AakccQO83kc_SlLKC1
 Z2 VDg1SIo80bB@j0V0VzS_@n1
 R0
-w1691181156
-8C:/Users/marie/Workspace/TS_SUB/TEST_ALGO_2W_COUNT.v
-FC:/Users/marie/Workspace/TS_SUB/TEST_ALGO_2W_COUNT.v
+w1691639243
+8C:/Users/marie/Workspace/TS_SUB/TEST_ALGO_2W.v
+FC:/Users/marie/Workspace/TS_SUB/TEST_ALGO_2W.v
 L0 1
 Z3 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z4 !s108 1691181194.000000
-!s107 C:/Users/marie/Workspace/TS_SUB/TEST_ALGO_2W_COUNT.v|
-!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/TS_SUB|C:/Users/marie/Workspace/TS_SUB/TEST_ALGO_2W_COUNT.v|
+Z4 !s108 1691639268.000000
+!s107 C:/Users/marie/Workspace/TS_SUB/TEST_ALGO_2W.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/TS_SUB|C:/Users/marie/Workspace/TS_SUB/TEST_ALGO_2W.v|
 !i113 1
 Z5 o-vlog01compat -work work
 Z6 !s92 -vlog01compat -work work +incdir+C:/Users/marie/Workspace/TS_SUB
 Z7 tCvgOpt 0
-n@t@e@s@t_@a@l@g@o_2@w_@c@o@u@n@t
+n@t@e@s@t_@a@l@g@o_2@w
 vTEST_ALGO_TB
 R1
 !i10b 1
-!s100 zNB7czz8HEd[GO8a5`oCE3
-I>RZYQ1==MZeV]U=WLShR<0
+!s100 Z8>J40EUCbin]:mhik8eT1
+Ihi0OK>KQ=YA6@RVzz3HZQ0
 R2
 R0
-w1691180833
+w1691638867
 8C:/Users/marie/Workspace/TS_SUB/TEST_ALGO_TB.v
 FC:/Users/marie/Workspace/TS_SUB/TEST_ALGO_TB.v
 L0 3

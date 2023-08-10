@@ -10,8 +10,8 @@ module TEST_ALGO_2W(
 	
 	output reg	[1 :0]STATE	,
 	
-	output reg	[5 :0]	WRITE_LSB,
-	output reg	[5 :0]	READ_LSB	,
+	output reg	[5 :0]	WRITE_MSB,
+	output reg	[5 :0]	READ_MSB	,
 	
 	output reg	[31:0]DATA_0	,
 	output reg	[31:0]DATA_1	,
@@ -53,8 +53,8 @@ always	@(posedge CLOCK or posedge RESET)	begin
 		readAddress	<= 5 'd0	;
 		writeAddress<= 5 'd0	;
 		
-		READ_LSB		<= 5 'd0;
-		WRITE_LSB	<= 5 'd0;
+		READ_MSB		<= 5 'd31;
+		WRITE_MSB	<= 5 'd31;
 		
 //		WRITE_COUNT	<= 2 'd0	;
 //		READ_COUNT	<= 2 'd0	;
@@ -84,17 +84,17 @@ always	@(posedge CLOCK or posedge RESET)	begin
 			
 			WRITE:	begin
 				
-				DATA[writeAddress][WRITE_LSB +: 10]		<=	DATA_IN;
+				DATA[writeAddress][WRITE_MSB -: 10]		<=	DATA_IN;
 				
-				WRITE_LSB	<= WRITE_LSB + 5 'd10;
+				WRITE_MSB	<= WRITE_MSB - 5 'd10;
 			// WRITE_COUNT	<=	WRITE_COUNT + 2'd1;
 				
 				
 			// if(WRITE_COUNT >= 2'd2)	begin
-				if(WRITE_LSB >= 5'd20)	begin
+				if(WRITE_MSB <= 5'd20)	begin
 				
 					writeAddress	<=	writeAddress + 4'd1;
-					WRITE_LSB		<=	5 'd0;
+					WRITE_MSB		<=	5 'd31;
 				// WRITE_COUNT		<=	2 'd0;
 				end
 				
@@ -103,16 +103,16 @@ always	@(posedge CLOCK or posedge RESET)	begin
 			
 			READ:	begin
 				
-				DATA_OUT		<=	DATA[readAddress][READ_LSB +: 10];
+				DATA_OUT		<=	DATA[readAddress][READ_MSB -: 10];
 				
-				READ_LSB		<= READ_LSB + 5 'd10;
+				READ_MSB		<= READ_MSB - 5 'd10;
 			// READ_COUNT	<=	READ_COUNT + 2'd1;
 				
 			// if(WRITE_COUNT >= 2'd2)	begin
-				if(READ_LSB >= 5'd20)	begin
+				if(READ_MSB <= 5'd20)	begin
 				
 					readAddress	<=	readAddress + 4'd1;
-					READ_LSB		<=	5 'd0;
+					READ_MSB		<=	5 'd31;
 				// READ_COUNT	<=	2 'd0;
 				end
 				
