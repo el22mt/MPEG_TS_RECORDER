@@ -1,0 +1,62 @@
+
+State Machine - |ExampleTopLevel|HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hpsinitreset_slave_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ExampleTopLevel|HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:hps_avmm_master_slave_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ExampleTopLevel|HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:handshake_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ExampleTopLevel|HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_mm_interconnect_1:mm_interconnect_1|altera_merlin_burst_adapter:system_id_control_slave_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ExampleTopLevel|HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:ocram_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ExampleTopLevel|HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_mm_interconnect_0:mm_interconnect_0|altera_merlin_burst_adapter:baremetal_s1_burst_adapter|altera_merlin_burst_adapter_13_1:altera_merlin_burst_adapter_13_1.burst_adapter|state
+Name state.ST_IDLE state.ST_UNCOMP_WR_SUBBURST state.ST_UNCOMP_TRANS state.ST_COMP_TRANS 
+state.ST_IDLE 0 0 0 0 
+state.ST_COMP_TRANS 1 0 0 1 
+state.ST_UNCOMP_TRANS 1 0 1 0 
+state.ST_UNCOMP_WR_SUBBURST 1 1 0 0 
+
+State Machine - |ExampleTopLevel|HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|LT24Display:lt24_fpga|stateMachine
+Name stateMachine.IDLE_STATE stateMachine.CASET_STATE stateMachine.XHADDR_STATE stateMachine.XLADDR_STATE stateMachine.PASET_STATE stateMachine.YHADDR_STATE stateMachine.YLADDR_STATE stateMachine.WRITE_STATE stateMachine.CMD_STATE stateMachine.LOAD_STATE stateMachine.INIT_STATE 
+stateMachine.INIT_STATE 0 0 0 0 0 0 0 0 0 0 0 
+stateMachine.LOAD_STATE 0 0 0 0 0 0 0 0 0 1 1 
+stateMachine.CMD_STATE 0 0 0 0 0 0 0 0 1 0 1 
+stateMachine.WRITE_STATE 0 0 0 0 0 0 0 1 0 0 1 
+stateMachine.YLADDR_STATE 0 0 0 0 0 0 1 0 0 0 1 
+stateMachine.YHADDR_STATE 0 0 0 0 0 1 0 0 0 0 1 
+stateMachine.PASET_STATE 0 0 0 0 1 0 0 0 0 0 1 
+stateMachine.XLADDR_STATE 0 0 0 1 0 0 0 0 0 0 1 
+stateMachine.XHADDR_STATE 0 0 1 0 0 0 0 0 0 0 1 
+stateMachine.CASET_STATE 0 1 0 0 0 0 0 0 0 0 1 
+stateMachine.IDLE_STATE 1 0 0 0 0 0 0 0 0 0 1 
+
+State Machine - |ExampleTopLevel|MemoryExample:core|CURRENT_STATE
+Name CURRENT_STATE.IDLE_STATE CURRENT_STATE.READ_STATE CURRENT_STATE.WRITE_STATE 
+CURRENT_STATE.IDLE_STATE 0 0 0 
+CURRENT_STATE.WRITE_STATE 1 0 1 
+CURRENT_STATE.READ_STATE 1 1 0 

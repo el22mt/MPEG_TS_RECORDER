@@ -1,0 +1,105 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "LED[0]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[1]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[2]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[3]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[4]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[5]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[6]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[7]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[8]",
+					"strict" : false
+				},
+				{
+					"name" : "LED[9]",
+					"strict" : false
+				},
+				{
+					"name" : "clock",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[0]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[8]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[6]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[4]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[2]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[1]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[5]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[3]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[9]",
+					"strict" : false
+				},
+				{
+					"name" : "SWITCH[7]",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "READ",
+					"strict" : false
+				},
+				{
+					"name" : "WRITE",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

@@ -1,0 +1,23 @@
+module TS_WIRE(
+	
+	input				TS_CLOCK_IN		,
+	
+	input				TS_VALID_IN		,
+	input				TS_SYNC_IN		,
+	input		[7 :0]TS_DATA_IN		,
+	
+	output			TS_CLOCK_OUT	,
+	
+	output			TS_VALID_OUT	,
+	output			TS_SYNC_OUT		,
+	output	[7 :0]TS_DATA_OUT	
+);
+
+assign	TS_CLOCK_OUT	= TS_CLOCK_OUT	;
+
+assign	TS_VALID_OUT	= TS_VALID_IN	;
+assign	TS_SYNC_OUT		= TS_SYNC_IN	;
+
+assign	TS_DATA_OUT		= TS_DATA_IN	;
+
+endmodule

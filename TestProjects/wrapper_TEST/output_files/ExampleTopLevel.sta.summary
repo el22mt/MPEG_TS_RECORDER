@@ -1,0 +1,264 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1100mV 85C Model Setup 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 1.730
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 10.412
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Setup 'clock50'
+Slack : 10.671
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.143
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'clock50'
+Slack : 0.226
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Hold 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 0.302
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 3.375
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'clock50'
+Slack : 15.603
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Recovery 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 16.440
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.470
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'clock50'
+Slack : 0.572
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Removal 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 0.972
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|pll_write_clk_dq_write_clk'
+Slack : 0.608
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.623
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 8.792
+TNS   : 0.000
+
+Type  : Slow 1100mV 85C Model Minimum Pulse Width 'clock50'
+Slack : 9.377
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 1.727
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 10.744
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Setup 'clock50'
+Slack : 10.849
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'clock50'
+Slack : 0.159
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.162
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Hold 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 0.271
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 3.468
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'clock50'
+Slack : 15.772
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Recovery 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 16.592
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.460
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'clock50'
+Slack : 0.528
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Removal 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 0.915
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|pll_write_clk_dq_write_clk'
+Slack : 0.613
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.630
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 8.758
+TNS   : 0.000
+
+Type  : Slow 1100mV 0C Model Minimum Pulse Width 'clock50'
+Slack : 9.296
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 2.110
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 13.635
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Setup 'clock50'
+Slack : 13.857
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.084
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'clock50'
+Slack : 0.132
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Hold 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 0.175
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 3.727
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'clock50'
+Slack : 17.215
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Recovery 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 17.540
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'clock50'
+Slack : 0.309
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Removal 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 0.555
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|pll_write_clk_dq_write_clk'
+Slack : 0.883
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.891
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 8.903
+TNS   : 0.000
+
+Type  : Fast 1100mV 85C Model Minimum Pulse Width 'clock50'
+Slack : 9.412
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 2.110
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 14.401
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Setup 'clock50'
+Slack : 14.491
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.077
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'clock50'
+Slack : 0.092
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Hold 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 0.151
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 3.825
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'clock50'
+Slack : 17.499
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Recovery 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 17.844
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'clock50'
+Slack : 0.279
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.473
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Removal 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 0.509
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|pll_write_clk_dq_write_clk'
+Slack : 0.887
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_pll:pll|afi_clk_write_clk'
+Slack : 0.894
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'hps_system|hps_qsys_system|arm_hps|fpga_interfaces|clocks_resets|h2f_user0_clk'
+Slack : 8.903
+TNS   : 0.000
+
+Type  : Fast 1100mV 0C Model Minimum Pulse Width 'clock50'
+Slack : 9.415
+TNS   : 0.000
+
+------------------------------------------------------------
+Info: see the "DDR report" for DDR timing results
+------------------------------------------------------------
+------------------------------------------------------------

@@ -1,0 +1,148 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/marie/Workspace/TS_RECORDER/simulation/modelsim
+vBUFFER_COMB
+Z1 !s110 1691640043
+!i10b 1
+!s100 cDHT66g4<^bjNI8IDO5^>2
+I@3dDQBCN]VX`DQzOiHT9W1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1681307439
+8C:/Users/marie/Workspace/TS_RECORDER/BUFFER_COMB.v
+FC:/Users/marie/Workspace/TS_RECORDER/BUFFER_COMB.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1691640043.000000
+!s107 C:/Users/marie/Workspace/TS_RECORDER/BUFFER_COMB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/TS_RECORDER|C:/Users/marie/Workspace/TS_RECORDER/BUFFER_COMB.v|
+!i113 1
+Z5 o-vlog01compat -work work
+Z6 !s92 -vlog01compat -work work +incdir+C:/Users/marie/Workspace/TS_RECORDER
+Z7 tCvgOpt 0
+n@b@u@f@f@e@r_@c@o@m@b
+vBUFFER_IP
+R1
+!i10b 1
+!s100 ]:5?b0R2YhGD2B6P>1<SS2
+I3fVo4Ae@FIhza3?8zTjCI0
+R2
+R0
+w1681307413
+8C:/Users/marie/Workspace/TS_RECORDER/BUFFER_IP.v
+FC:/Users/marie/Workspace/TS_RECORDER/BUFFER_IP.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/marie/Workspace/TS_RECORDER/BUFFER_IP.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/TS_RECORDER|C:/Users/marie/Workspace/TS_RECORDER/BUFFER_IP.v|
+!i113 1
+R5
+R6
+R7
+n@b@u@f@f@e@r_@i@p
+vBUFFER_OP
+R1
+!i10b 1
+!s100 :oLa^X6<o2n]CoFVTi=h53
+I?o_QT`?0lGNT2nmCdc3mE3
+R2
+R0
+w1681307414
+8C:/Users/marie/Workspace/TS_RECORDER/BUFFER_OP.v
+FC:/Users/marie/Workspace/TS_RECORDER/BUFFER_OP.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/marie/Workspace/TS_RECORDER/BUFFER_OP.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/TS_RECORDER|C:/Users/marie/Workspace/TS_RECORDER/BUFFER_OP.v|
+!i113 1
+R5
+R6
+R7
+n@b@u@f@f@e@r_@o@p
+vBUTTON_REL_DET
+R1
+!i10b 1
+!s100 mn5FOM8fG72gdM`T4=RaB0
+I2]gUYNJdY?D37Fd?2L=:82
+R2
+R0
+w1689259392
+8C:/Users/marie/Workspace/TS_RECORDER/BUTTON_REL_DET.v
+FC:/Users/marie/Workspace/TS_RECORDER/BUTTON_REL_DET.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/marie/Workspace/TS_RECORDER/BUTTON_REL_DET.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/TS_RECORDER|C:/Users/marie/Workspace/TS_RECORDER/BUTTON_REL_DET.v|
+!i113 1
+R5
+R6
+R7
+n@b@u@t@t@o@n_@r@e@l_@d@e@t
+vNBitSynchroniser
+R1
+!i10b 1
+!s100 6@HobUfhnH@XDYhRfT`2G1
+ILYe7BkVZV8<47H?F8D9MR1
+R2
+R0
+w1688489420
+8C:/Users/marie/Workspace/TS_RECORDER/NBitSynchroniser.v
+FC:/Users/marie/Workspace/TS_RECORDER/NBitSynchroniser.v
+L0 7
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/marie/Workspace/TS_RECORDER/NBitSynchroniser.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/TS_RECORDER|C:/Users/marie/Workspace/TS_RECORDER/NBitSynchroniser.v|
+!i113 1
+R5
+R6
+R7
+n@n@bit@synchroniser
+vResetSynchroniser
+R1
+!i10b 1
+!s100 f^NKGAo]C:loG?1nH`Nk=2
+I`<nmSgY:K@`5e^JA<aE5e2
+R2
+R0
+w1689264739
+8C:/Users/marie/Workspace/TS_RECORDER/ResetSynchroniser.v
+FC:/Users/marie/Workspace/TS_RECORDER/ResetSynchroniser.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/marie/Workspace/TS_RECORDER/ResetSynchroniser.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/TS_RECORDER|C:/Users/marie/Workspace/TS_RECORDER/ResetSynchroniser.v|
+!i113 1
+R5
+R6
+R7
+n@reset@synchroniser

@@ -1,0 +1,164 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 2017  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus Prime
+# Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+# Date created = 11:16:26  August 03, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		TS_RECORDER_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus Prime software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone V"
+set_global_assignment -name DEVICE 5CSEMA5F31C6
+set_global_assignment -name TOP_LEVEL_ENTITY TS_WIRE
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION 17.1.0
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "11:16:26  AUGUST 03, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+set_global_assignment -name PROJECT_OUTPUT_DIRECTORY output_files
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name ERROR_CHECK_FREQUENCY_DIVISOR 256
+set_global_assignment -name EDA_SIMULATION_TOOL "ModelSim-Altera (Verilog)"
+set_global_assignment -name EDA_TIME_SCALE "1 ps" -section_id eda_simulation
+set_global_assignment -name EDA_OUTPUT_DATA_FORMAT "VERILOG HDL" -section_id eda_simulation
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_location_assignment PIN_AC18 -to TS_CLOCK_IN
+set_location_assignment PIN_Y17 -to TS_CLOCK_OUT
+set_location_assignment PIN_AH18 -to TS_DATA_IN[7]
+set_location_assignment PIN_AG16 -to TS_DATA_IN[6]
+set_location_assignment PIN_AF16 -to TS_DATA_IN[5]
+set_location_assignment PIN_AA18 -to TS_DATA_IN[4]
+set_location_assignment PIN_AE17 -to TS_DATA_IN[3]
+set_location_assignment PIN_AH19 -to TS_DATA_IN[2]
+set_location_assignment PIN_AH20 -to TS_DATA_IN[1]
+set_location_assignment PIN_AD19 -to TS_DATA_IN[0]
+set_location_assignment PIN_AK16 -to TS_SYNC_IN
+set_location_assignment PIN_AD17 -to TS_VALID_IN
+set_location_assignment PIN_AK18 -to TS_SYNC_OUT
+set_location_assignment PIN_Y18 -to TS_VALID_OUT
+set_location_assignment PIN_AH17 -to TS_DATA_OUT[7]
+set_location_assignment PIN_AE16 -to TS_DATA_OUT[6]
+set_location_assignment PIN_AG17 -to TS_DATA_OUT[5]
+set_location_assignment PIN_AA19 -to TS_DATA_OUT[4]
+set_location_assignment PIN_AC20 -to TS_DATA_OUT[3]
+set_location_assignment PIN_AJ20 -to TS_DATA_OUT[2]
+set_location_assignment PIN_AK21 -to TS_DATA_OUT[1]
+set_location_assignment PIN_AD20 -to TS_DATA_OUT[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_CLOCK_IN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_CLOCK_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_IN[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_IN[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_IN[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_IN[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_IN[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_IN[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_IN[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_IN[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_IN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_OUT[7]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_OUT[6]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_OUT[5]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_OUT[4]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_OUT[3]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_OUT[2]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_OUT[1]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_OUT[0]
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_DATA_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_SYNC_IN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_SYNC_OUT
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_VALID_IN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to TS_VALID_OUT
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_AA15 -to PASS_IN
+set_location_assignment PIN_W15 -to PLAY_IN
+set_location_assignment PIN_Y16 -to RECORD_IN
+set_location_assignment PIN_AA14 -to RESET_IN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PASS_IN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to PLAY_IN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RECORD_IN
+set_instance_assignment -name IO_STANDARD "3.3-V LVTTL" -to RESET_IN
+set_location_assignment PIN_AH28 -to HEX_0[6]
+set_location_assignment PIN_AG28 -to HEX_0[5]
+set_location_assignment PIN_AF28 -to HEX_0[4]
+set_location_assignment PIN_AG27 -to HEX_0[3]
+set_location_assignment PIN_AE28 -to HEX_0[2]
+set_location_assignment PIN_AE27 -to HEX_0[1]
+set_location_assignment PIN_AE26 -to HEX_0[0]
+set_location_assignment PIN_V25 -to HEX_5[0]
+set_location_assignment PIN_AA25 -to HEX_5[6]
+set_location_assignment PIN_AA26 -to HEX_5[5]
+set_location_assignment PIN_AB26 -to HEX_5[4]
+set_location_assignment PIN_AB27 -to HEX_5[3]
+set_location_assignment PIN_Y27 -to HEX_5[2]
+set_location_assignment PIN_AA28 -to HEX_5[1]
+set_location_assignment PIN_AA24 -to HEX_4[0]
+set_location_assignment PIN_Y24 -to HEX_4[2]
+set_location_assignment PIN_W25 -to HEX_4[6]
+set_location_assignment PIN_V23 -to HEX_4[5]
+set_location_assignment PIN_W24 -to HEX_4[4]
+set_location_assignment PIN_W22 -to HEX_4[3]
+set_location_assignment PIN_Y23 -to HEX_4[1]
+set_location_assignment PIN_AB22 -to HEX_3[6]
+set_location_assignment PIN_AB25 -to HEX_3[5]
+set_location_assignment PIN_AB28 -to HEX_3[4]
+set_location_assignment PIN_AC25 -to HEX_3[3]
+set_location_assignment PIN_AD25 -to HEX_3[2]
+set_location_assignment PIN_AC27 -to HEX_3[1]
+set_location_assignment PIN_AD26 -to HEX_3[0]
+set_location_assignment PIN_AC30 -to HEX_2[6]
+set_location_assignment PIN_AC29 -to HEX_2[5]
+set_location_assignment PIN_AD30 -to HEX_2[4]
+set_location_assignment PIN_AC28 -to HEX_2[3]
+set_location_assignment PIN_AD29 -to HEX_2[2]
+set_location_assignment PIN_AE29 -to HEX_2[1]
+set_location_assignment PIN_AB23 -to HEX_2[0]
+set_location_assignment PIN_AD27 -to HEX_1[6]
+set_location_assignment PIN_AF30 -to HEX_1[5]
+set_location_assignment PIN_AF29 -to HEX_1[4]
+set_location_assignment PIN_AG30 -to HEX_1[3]
+set_location_assignment PIN_AH30 -to HEX_1[2]
+set_location_assignment PIN_AH29 -to HEX_1[1]
+set_location_assignment PIN_AJ29 -to HEX_1[0]
+set_global_assignment -name SDC_FILE GenericDesignConstraints.sdc
+set_global_assignment -name VERILOG_FILE BUFFER_OP.v
+set_global_assignment -name VERILOG_FILE BUFFER_IP.v
+set_global_assignment -name VERILOG_FILE BUFFER_COMB.v
+set_global_assignment -name VERILOG_FILE ResetSynchroniser.v
+set_global_assignment -name VERILOG_FILE NBitSynchroniser.v
+set_global_assignment -name VERILOG_FILE BUTTON_REL_DET.v
+set_global_assignment -name VERILOG_FILE TS_WIRE.v
+set_global_assignment -name VERILOG_FILE TS_STATE_MACHINE.v
+set_global_assignment -name VERILOG_FILE DECODER_7SEGMENT.v
+set_location_assignment PIN_AF14 -to SYS_CLOCK
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
