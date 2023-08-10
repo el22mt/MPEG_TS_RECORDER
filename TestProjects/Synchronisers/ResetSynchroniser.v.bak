@@ -1,0 +1,21 @@
+module ResetSynchroniser (
+    input clock,
+    input resetIn,
+    
+    output resetOut
+);
+
+//Reset synchroniser to avoid metastability if external push-button used
+reg [3:0] resetSync = 4'hF;
+
+always @ (posedge clock or posedge resetIn) begin
+    if (resetIn) begin
+        resetSync <= 4'hF; //Assert reset asynchronously
+    end else begin
+        resetSync <= {resetSync[2:0],1'b0}; //Deassert reset synchronously
+    end
+end
+
+assign resetOut = resetSync[3];
+
+endmodule

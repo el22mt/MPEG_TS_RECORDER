@@ -1,0 +1,35 @@
+`timescale 1 ns/100 ps
+
+module BIT_SHIFT_TEST;
+//	
+//	input CLOCK,
+//	input	RESET,
+//	
+//	input [9:0]DATA_IN,
+//	
+//	output reg [31:0]DATA_OUT
+//);
+
+reg [31:0]DATA = 32'd15;
+wire [31:0]DATA_OUT;
+
+initial	begin
+
+#10	DATA = DATA << 10;
+		DATA_OUT	<= DATA;
+		
+#50	$stop;
+end 
+
+//always@	(posedge CLOCK or posedge RESET)	begin
+//	
+//	if(RESET)	begin
+//		
+//		DATA <= 32'd15;
+//	end
+//	else	begin
+//		
+//		DATA <= DATA << 10;
+//	end
+//end
+endmodule

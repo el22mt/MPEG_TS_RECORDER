@@ -1,0 +1,13 @@
+module TEST_ALGO_TB(
+	
+	input				CLOCK		,
+	input				RESET		,
+	
+	input				WRITE_IN	,
+	input				READ_IN	,
+	
+	input		[10:0]DATA_IN	,
+	
+	output	[10:0]DATA_OUT
+	
+);

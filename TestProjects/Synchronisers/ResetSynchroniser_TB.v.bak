@@ -1,0 +1,15 @@
+`timescale 1 ns/100 ps
+
+module ResetSynchroniser_TB();
+
+  reg	 clock	 	;
+  reg	 resetIn		;
+  wire resetOut	;
+
+ResetSynchroniser (
+    .clock		(clock	),
+    .resetIn	(resetIn	),
+    .resetOut	(resetOut)
+);
+
+endmodule

@@ -1,0 +1,12 @@
+|ResetSynchroniser
+clock => resetSync[0].CLK
+clock => resetSync[1].CLK
+clock => resetSync[2].CLK
+clock => resetSync[3].CLK
+resetIn => resetSync[0].PRESET
+resetIn => resetSync[1].ALOAD
+resetIn => resetSync[2].ALOAD
+resetIn => resetSync[3].ALOAD
+resetOut <= resetSync[3].DB_MAX_OUTPUT_PORT_TYPE
+
+

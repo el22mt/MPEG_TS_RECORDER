@@ -1,0 +1,16 @@
+`timescale 1 ns/100 ps
+
+module FIFO_DC_i1o1_4b_TB;
+
+FIFO_DC_i1o1_4b DUT(
+	aclr,
+	data,
+	rdclk,
+	rdreq,
+	wrclk,
+	wrreq,
+	q,
+	rdempty,
+	wrfull);
+
+endmodule

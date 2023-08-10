@@ -1,0 +1,10 @@
+module NBitSynchroniser_TB ();
+
+    //Clock and Asynchronous Input
+    reg              clock	 ;
+	 reg  [WIDTH-1:0] asyncIn;
+    
+	 //Synchronous Output
+    wire [WIDTH-1:0] syncOut;
+
+endmodule

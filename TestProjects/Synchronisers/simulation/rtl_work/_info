@@ -1,0 +1,56 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser/simulation
+vResetSynchroniser
+Z1 !s110 1681369232
+!i10b 1
+!s100 ELNgdP7F_9[X:N>;85^U52
+I<[TS:E>;`ZO;X<EQmgC=W1
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+w1681368559
+8C:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser/ResetSynchroniser.v
+FC:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser/ResetSynchroniser.v
+L0 1
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+!s108 1681369231.000000
+!s107 C:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser/ResetSynchroniser.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser|C:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser/ResetSynchroniser.v|
+!i113 1
+Z4 o-vlog01compat -work work
+Z5 !s92 -vlog01compat -work work +incdir+C:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser
+Z6 tCvgOpt 0
+n@reset@synchroniser
+vResetSynchroniser_TB
+R1
+!i10b 1
+!s100 nK;k6dc^cE6I;4MaTiJ6C2
+INgY01`Ja?T;KLlO^>MIoB0
+R2
+R0
+w1681369207
+8C:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser/ResetSynchroniser_TB.v
+FC:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser/ResetSynchroniser_TB.v
+L0 3
+R3
+r1
+!s85 0
+31
+!s108 1681369232.000000
+!s107 C:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser/ResetSynchroniser_TB.v|
+!s90 -reportprogress|300|-vlog01compat|-work|work|+incdir+C:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser|C:/Users/marie/Workspace/ELEC5566M-Unit2-el22mt/2-P-Synchroniser/ResetSynchroniser_TB.v|
+!i113 1
+R4
+R5
+R6
+n@reset@synchroniser_@t@b

@@ -1,0 +1,90 @@
+module TS_STATE_MACHINE(
+	
+	input TS_CLOCK_IN,
+	
+	input CLOCK		,
+	input RESET		,
+	
+	input PASS		,
+	input PLAY		,
+	input REC		,
+	
+	input			TS_VALID_IN	,
+	input			TS_SYNC_IN	,
+	input	 [7:0]TS_DATA_IN	,
+	
+	output		TS_VALID_OUT,
+	output		TS_SYNC_OUT	,
+	output [7:0]TS_DATA_OUT	,
+	
+	output 		TS_CLOCK_OUT,
+	
+	output reg [1:0] STATE
+);
+
+reg			TEMP_VALID	;
+reg			TEMP_SYNC	;
+reg	[7:0]	TEMP_DATA	;
+
+wire			B_VALID	;
+wire			B_SYNC	;
+wire	[7:0]	B_DATA	;
+
+TS_BUFFER B0(
+	.CLOCK	(TS_CLOCK_IN),
+	.RESET	(RESET	),
+	.DATA_IN	({TS_VALID_IN, TS_SYNC_IN, TS_DATA_IN}	),
+	
+	.DATA_OUT({B_VALID, B_SYNC, B_DATA}					)
+);
+
+localparam PASSTHROUGH	= 2'b00;
+localparam RECORD			= 2'b01;
+localparam REPLAY			= 2'b10;
+
+always @(posedge CLOCK or posedge RESET)	begin
+
+	if(RESET)	begin
+	
+		STATE <= PASSTHROUGH;
+	end
+	else	begin
+	
+		case(STATE)
+		
+			PASSTHROUGH:	begin
+			
+				TEMP_VALID	= TS_VALID_IN;
+				TEMP_SYNC	= TS_SYNC_IN	;
+				TEMP_DATA	= TS_DATA_IN	;
+				
+				if(PLAY || REC)	begin
+				
+					if(PLAY	)	STATE <= REPLAY;
+					if(REC	)	STATE <= RECORD;
+				end
+				else	begin
+				
+					STATE <= PASSTHROUGH;
+				end
+			end
+			
+			RECORD:	begin
+			
+				STATE <= (PASS	)? PASSTHROUGH : RECORD;
+			end
+			
+			REPLAY:	begin
+			
+				STATE <= (PASS	)? PASSTHROUGH : REPLAY;
+			end
+		endcase
+	end
+end
+
+assign TS_CLOCK_OUT	= TS_CLOCK_IN;
+//assign TS_VALID_OUT	= TEMP_VALID;
+//assign TS_SYNC_OUT	= TEMP_SYNC	;
+//assign TS_DATA_OUT	= TEMP_DATA	;
+
+endmodule

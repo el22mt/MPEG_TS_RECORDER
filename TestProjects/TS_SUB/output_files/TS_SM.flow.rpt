@@ -1,0 +1,142 @@
+Flow report for TS_SM
+Fri Aug 04 21:33:03 2023
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Flow Summary
+  3. Flow Settings
+  4. Flow Non-Default Global Settings
+  5. Flow Elapsed Time
+  6. Flow OS Summary
+  7. Flow Log
+  8. Flow Messages
+  9. Flow Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++-------------------------------------------------------------------------------+
+; Flow Summary                                                                  ;
++---------------------------------+---------------------------------------------+
+; Flow Status                     ; Successful - Fri Aug 04 21:33:03 2023       ;
+; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                   ; TS_SM                                       ;
+; Top-level Entity Name           ; TEST_ALGO_2W_COUNT                          ;
+; Family                          ; Cyclone V                                   ;
+; Device                          ; 5CSEMA5F31C6                                ;
+; Timing Models                   ; Final                                       ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 1055                                        ;
+; Total pins                      ; 394                                         ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
+
+
++-----------------------------------------+
+; Flow Settings                           ;
++-------------------+---------------------+
+; Option            ; Setting             ;
++-------------------+---------------------+
+; Start date & time ; 08/04/2023 21:32:47 ;
+; Main task         ; Compilation         ;
+; Revision Name     ; TS_SM               ;
++-------------------+---------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Flow Non-Default Global Settings                                                                                                                   ;
++----------------------------------------+------------------------------------------------+---------------+--------------------+---------------------+
+; Assignment Name                        ; Value                                          ; Default Value ; Entity Name        ; Section Id          ;
++----------------------------------------+------------------------------------------------+---------------+--------------------+---------------------+
+; COMPILER_SIGNATURE_ID                  ; 93180995280387.169118116719716                 ; --            ; --                 ; --                  ;
+; EDA_DESIGN_INSTANCE_NAME               ; NA                                             ; --            ; --                 ; BUTTON_REL_DET_TB   ;
+; EDA_DESIGN_INSTANCE_NAME               ; NA                                             ; --            ; --                 ; TS_STATE_MACHINE_TB ;
+; EDA_DESIGN_INSTANCE_NAME               ; NA                                             ; --            ; --                 ; TEST_ALGO_TB        ;
+; EDA_DESIGN_INSTANCE_NAME               ; NA                                             ; --            ; --                 ; BIT_SHIFT_TEST_TB   ;
+; EDA_NATIVELINK_SIMULATION_SETUP_SCRIPT ; ../ELEC5566M-Resources/simulation/load_sim.tcl ; --            ; --                 ; eda_simulation      ;
+; EDA_NATIVELINK_SIMULATION_TEST_BENCH   ; TEST_ALGO_TB                                   ; --            ; --                 ; eda_simulation      ;
+; EDA_NETLIST_WRITER_OUTPUT_DIR          ; simulation                                     ; --            ; --                 ; eda_simulation      ;
+; EDA_OUTPUT_DATA_FORMAT                 ; Verilog Hdl                                    ; --            ; --                 ; eda_simulation      ;
+; EDA_SIMULATION_TOOL                    ; ModelSim-Altera (Verilog)                      ; <None>        ; --                 ; --                  ;
+; EDA_TEST_BENCH_ENABLE_STATUS           ; TEST_BENCH_MODE                                ; --            ; --                 ; eda_simulation      ;
+; EDA_TEST_BENCH_FILE                    ; BUTTON_REL_DET_TB.v                            ; --            ; --                 ; BUTTON_REL_DET_TB   ;
+; EDA_TEST_BENCH_FILE                    ; TS_STATE_MACHINE_TB.v                          ; --            ; --                 ; TS_STATE_MACHINE_TB ;
+; EDA_TEST_BENCH_FILE                    ; TEST_ALGO_TB.v                                 ; --            ; --                 ; TEST_ALGO_TB        ;
+; EDA_TEST_BENCH_FILE                    ; BIT_SHIFT_TEST_TB.v                            ; --            ; --                 ; BIT_SHIFT_TEST_TB   ;
+; EDA_TEST_BENCH_MODULE_NAME             ; BUTTON_REL_DET_TB                              ; --            ; --                 ; BUTTON_REL_DET_TB   ;
+; EDA_TEST_BENCH_MODULE_NAME             ; TS_STATE_MACHINE_TB                            ; --            ; --                 ; TS_STATE_MACHINE_TB ;
+; EDA_TEST_BENCH_MODULE_NAME             ; TEST_ALGO_TB                                   ; --            ; --                 ; TEST_ALGO_TB        ;
+; EDA_TEST_BENCH_MODULE_NAME             ; BIT_SHIFT_TEST_TB                              ; --            ; --                 ; BIT_SHIFT_TEST_TB   ;
+; EDA_TEST_BENCH_NAME                    ; TS_STATE_MACHINE_TB                            ; --            ; --                 ; eda_simulation      ;
+; EDA_TEST_BENCH_NAME                    ; BUTTON_REL_DET_TB                              ; --            ; --                 ; eda_simulation      ;
+; EDA_TEST_BENCH_NAME                    ; TEST_ALGO_TB                                   ; --            ; --                 ; eda_simulation      ;
+; EDA_TEST_BENCH_NAME                    ; BIT_SHIFT_TEST_TB                              ; --            ; --                 ; eda_simulation      ;
+; EDA_TIME_SCALE                         ; 1 ns                                           ; --            ; --                 ; eda_simulation      ;
+; MAX_CORE_JUNCTION_TEMP                 ; 85                                             ; --            ; --                 ; --                  ;
+; MIN_CORE_JUNCTION_TEMP                 ; 0                                              ; --            ; --                 ; --                  ;
+; PARTITION_COLOR                        ; -- (Not supported for targeted family)         ; --            ; TEST_ALGO_2W_COUNT ; Top                 ;
+; PARTITION_FITTER_PRESERVATION_LEVEL    ; -- (Not supported for targeted family)         ; --            ; TEST_ALGO_2W_COUNT ; Top                 ;
+; PARTITION_NETLIST_TYPE                 ; -- (Not supported for targeted family)         ; --            ; TEST_ALGO_2W_COUNT ; Top                 ;
+; POWER_BOARD_THERMAL_MODEL              ; None (CONSERVATIVE)                            ; --            ; --                 ; --                  ;
+; POWER_PRESET_COOLING_SOLUTION          ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW          ; --            ; --                 ; --                  ;
+; PROJECT_OUTPUT_DIRECTORY               ; output_files                                   ; --            ; --                 ; --                  ;
+; TOP_LEVEL_ENTITY                       ; TEST_ALGO_2W_COUNT                             ; TS_SM         ; --                 ; --                  ;
++----------------------------------------+------------------------------------------------+---------------+--------------------+---------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------+
+; Flow Elapsed Time                                                                                                        ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+; Analysis & Synthesis ; 00:00:17     ; 1.0                     ; 4806 MB             ; 00:00:32                           ;
+; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:32                           ;
++----------------------+--------------+-------------------------+---------------------+------------------------------------+
+
+
++------------------------------------------------------------------------------------+
+; Flow OS Summary                                                                    ;
++----------------------+------------------+------------+------------+----------------+
+; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
++----------------------+------------------+------------+------------+----------------+
+; Analysis & Synthesis ; DESKTOP-632QBNL  ; Windows 10 ; 10.0       ; x86_64         ;
++----------------------+------------------+------------+------------+----------------+
+
+
+------------
+; Flow Log ;
+------------
+quartus_map --read_settings_files=on --write_settings_files=off TS_SM -c TS_SM
+
+
+
