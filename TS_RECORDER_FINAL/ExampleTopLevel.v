@@ -88,115 +88,122 @@ module ExampleTopLevel (
 /*
  *   <<<<<--------- AND HERE
  */
+ 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Input and Output ports for Transport Stream Recorder:
 
-	input					clock				,
+	input					clock				,					 // 50 MHz clock input for the system.
 	
-	input					RESET_IN			,
+	input					RESET_IN			,					 // Reset input for the system.
 	
-	input					PASS_IN			,
-	input					RECORD_IN		,
-	input					PLAY_IN			,
+	input					PASS_IN			,					 // PASS button input.
+	input					RECORD_IN		,					 // RECORD button input.
+	input					PLAY_IN			,					 // PLAY button input.
 	
-	input					TS_CLOCK_IN		,
+	input					TS_CLOCK_IN		,					 // 6 MHz TS CLOCK input from STB.
 	
-	input					TS_VALID_IN		,
-	input					TS_SYNC_IN		,
-	input			[7 :0]TS_DATA_IN		,
+	input					TS_VALID_IN		,					 // TS VALID input from STB.
+	input					TS_SYNC_IN		,					 // TS SYNC input from STB.
+	input			[7 :0]TS_DATA_IN		,					 // TS DATA input (8-bit) from STB.
 	
-	input			[9 :0]SWITCH			,
-	output		[9 :0]LED				,
+	input			[9 :0]SWITCH			,					 // SWITCH input for testing the memory.
+	output		[9 :0]LED				,					 // LED output for displaying test data from the memory.
 	
-	output				TS_CLOCK_OUT	,
+	output				TS_CLOCK_OUT	,					 // 6 MHz TS CLOCK output to STB.
 	
-	output				TS_VALID_OUT	,
-	output				TS_SYNC_OUT		,
-	output		[7 :0]TS_DATA_OUT		,
+	output				TS_VALID_OUT	,					 // TS VALID output to STB.
+	output				TS_SYNC_OUT		,					 // TS SYNC output to STB.
+	output		[7 :0]TS_DATA_OUT		,					 // TS DATA output (8-bit) to STB.
 	
-	output reg	[6 :0]HEX_0				,
-	output reg	[6 :0]HEX_1				,
-	output reg	[6 :0]HEX_2				,
-	output reg	[6 :0]HEX_3				,
-	output 		[6 :0]HEX_4				,
-	output 		[6 :0]HEX_5
+	output reg	[6 :0]HEX_0				,					 // 7 - Segment Display HEX 0 (displays multiple values).
+	output reg	[6 :0]HEX_1				,					 // 7 - Segment Display HEX 1 (displays multiple values).
+	output reg	[6 :0]HEX_2				,					 // 7 - Segment Display HEX 2 (displays multiple values).
+	output reg	[6 :0]HEX_3				,					 // 7 - Segment Display HEX 3 (displays multiple values).
+	output 		[6 :0]HEX_4				,					 // 7 - Segment Display HEX 4 (displays single value ).
+	output 		[6 :0]HEX_5									 // 7 - Segment Display HEX 5 (displays single value ).
 
-    
-    
 );
 
-	wire				SYS_RESET		;
-	
-ResetSynchroniser_HW SYS_SYNC_R(
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Instantiation of Reset Synchronisers:
 
-    .clock		(clock			),
-    .resetIn	(RESET_IN		),
+	wire				SYS_RESET		;						 // Synchronised reset for blocks using 50 MHz Clock signal (clock).
+	
+ResetSynchroniser_HW SYS_SYNC_R(							 // Reset Synchroniser for 'clock'. 
+
+    .clock		(clock			),							 // 50 MHz Clock input.
+    .resetIn	(RESET_IN		),							 // RESET button.
     
-    .resetOut	(SYS_RESET		)
+    .resetOut	(SYS_RESET		)							 // Reset signal synchronised to 'clock'.
 );
 
-	wire				TS_RESET			;
+	wire				TS_RESET			;						 // Synchronised reset for blocks using 6 MHz Clock signal (TS_CLOCK).
 	
-ResetSynchroniser_HW TS_SYNC_R(
+ResetSynchroniser_HW TS_SYNC_R(							 // Reset Synchroniser for 'TS_CLOCK'. 
 
-    .clock		(TS_CLOCK_IN	),
-    .resetIn	(RESET_IN		),
+    .clock		(TS_CLOCK_IN	),							 // 6 MHz Clock input.
+    .resetIn	(RESET_IN		),							 // RESET button.
     
-    .resetOut	(TS_RESET		)
+    .resetOut	(TS_RESET		)							 // Reset signal synchronised to 'TS_CLOCK'.
 );
 
-	wire				S_PASS			;
-	wire				S_RECORD			;
-	wire				S_PLAY			;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Instantiation of Input Synchroniser:
+
+	wire				S_PASS			;						 // Synchronised output for PASS button.
+	wire				S_RECORD			;						 // Synchronised output for RECORD button.
+	wire				S_PLAY			;						 // Synchronised output for PLAY button.
 	
 NBitSynchroniser #(
 
-	.WIDTH(3)  // Number of bits wide
+	.WIDTH(3)  													 // 3 - bits wide, for three input signals.
 	)
 	SYS_SYNC_IP(
 	
-		.clock	(clock									),
-		.asyncIn	({PASS_IN, RECORD_IN, PLAY_IN}	),
-		.syncOut	({S_PASS, S_RECORD, S_PLAY}		)
+		.clock	(clock									),	 // 50 MHz Clock input.
+		.asyncIn	({PASS_IN, RECORD_IN, PLAY_IN}	),	 // Asynchronous input signals (buttons). 
+		.syncOut	({S_PASS, S_RECORD, S_PLAY}		)	 // Synchronous output signals.
 );
 
-	wire				PASS				;
-	wire				RECORD			;
-	wire				PLAY				;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Instantiation of Button Release Detector:
+
+	wire				PASS				;						 // PASS input for TS_STATE_MACHINE.
+	wire				RECORD			;						 // RECORD input for TS_STATE_MACHINE.
+	wire				PLAY				;						 // PLAY input for TS_STATE_MACHINE.
 
 BUTTON_REL_DET DET_IN(
-  .CLOCK		(clock								)	,          					// Input clock signal
-  .RESET		(SYS_RESET							)	,          					// Input reset signal
-  .BUTTONS	({S_PASS, S_RECORD, S_PLAY}	)	,        					// Input representing the current state of buttons
-  .RELEASE	({PASS, RECORD, PLAY}			)          						// Output register representing the button release signals
+  .CLOCK		(clock								)	,		 // 50 MHz Clock input.
+  .RESET		(SYS_RESET							)	,      // Reset signal synchronised to 'clock'.
+  .BUTTONS	({S_PASS, S_RECORD, S_PLAY}	)	,      // Inputs from push buttons.
+  .RELEASE	({PASS, RECORD, PLAY}			)			 // Release detected.
 );
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Interface for DDR3 Memory:
 
-//
-// Application Reset
-//
-wire reset;             //Application Reset from LT24 - Use For All Logic Clocked with "clock"
+// DDR Read Interface:
 
-//
-// DDR Read Interface
-//
-wire        ddr_read_clock;         //Clock for DDR3 Read Logic. Can be connected to "clock"
-wire        ddr_read_reset;         //Reset for DDR3 Read Logic. If "ddr_read_clock" is connected to "clock", use "reset" for DDR read logic instead of this wire.
-wire [23:0] ddr_read_address;       //64MB Chunk of DDR3. Word Address (unit of address is 32bit).
-wire        ddr_read_waitrequest;   //When wait request is high, read is ignored.
-wire        ddr_read_read;          //Assert read for one cycle for each word of data to be read.
-wire        ddr_read_readdatavalid; //Read Data Valid will be high for each word of data read, but latency varies from read.
-wire [31:0] ddr_read_readdata;      //Read Data should only be used if read data valid is high.
+wire        ddr_read_clock;         					 //Clock for DDR3 Read Logic. Can be connected to "clock"
+wire        ddr_read_reset;         					 //Reset for DDR3 Read Logic. If "ddr_read_clock" is connected to "clock", use "reset" for DDR read logic instead of this wire.
+wire [23:0] ddr_read_address;       					 //64MB Chunk of DDR3. Word Address (unit of address is 32bit).
+wire        ddr_read_waitrequest;   					 //When wait request is high, read is ignored.
+wire        ddr_read_read;          					 //Assert read for one cycle for each word of data to be read.
+wire        ddr_read_readdatavalid; 					 //Read Data Valid will be high for each word of data read, but latency varies from read.
+wire [31:0] ddr_read_readdata;      					 //Read Data should only be used if read data valid is high.
 
-//
-// DDR Write Interface
-//
-wire        ddr_write_clock;        //Clock for DDR3 Write Logic. Can be connected to "clock"
-wire        ddr_write_reset;        //Reset for DDR3 Write Logic. If "ddr_read_clock" is connected to "clock", use "reset" for DDR write logic instead of this wire.
-wire [23:0] ddr_write_address;      //64MB Chunk of DDR3. Word Address (unit of address is 32bit).  
-wire        ddr_write_waitrequest;  //When wait request is high, write is ignored.
-wire        ddr_write_write;        //Assert write for one cycle for each word of data to be written
-wire [31:0] ddr_write_writedata;    //Write data should be valid when write is high.
-wire [ 3:0] ddr_write_byteenable;   //Byte enable should be valid when write is high.
+// DDR Write Interface:
 
+wire        ddr_write_clock;        					 //Clock for DDR3 Write Logic. Can be connected to "clock"
+wire        ddr_write_reset;        					 //Reset for DDR3 Write Logic. If "ddr_read_clock" is connected to "clock", use "reset" for DDR write logic instead of this wire.
+wire [23:0] ddr_write_address;      					 //64MB Chunk of DDR3. Word Address (unit of address is 32bit).  
+wire        ddr_write_waitrequest;  					 //When wait request is high, write is ignored.
+wire        ddr_write_write;        					 //Assert write for one cycle for each word of data to be written
+wire [31:0] ddr_write_writedata;    					 //Write data should be valid when write is high.
+wire [ 3:0] ddr_write_byteenable;   					 //Byte enable should be valid when write is high.
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Instantiation of State Machine:
  
  TS_STATE_MACHINE SM(
 	
@@ -224,10 +231,7 @@ wire [ 3:0] ddr_write_byteenable;   //Byte enable should be valid when write is 
 	.TS_CLOCK_OUT	(TS_CLOCK_OUT	),
 	
 	.STATE			(STATE			),
-	
-//
 // DDR Read Interface
-//
    .ddr_read_clock        (ddr_read_clock),         //Clock for DDR3 Read Logic. Can be connected to "clock"
    .ddr_read_reset        (ddr_read_reset),         //Reset for DDR3 Read Logic. If "ddr_read_clock" is connected to "clock", use "reset" for DDR read logic instead of this wire.
    .ddr_read_address      (ddr_read_address),       //64MB Chunk of DDR3. Word Address (unit of address is 32bit).
@@ -235,10 +239,7 @@ wire [ 3:0] ddr_write_byteenable;   //Byte enable should be valid when write is 
    .ddr_read_read         (ddr_read_read),          //Assert read for one cycle for each word of data to be read.
    .ddr_read_readdatavalid(ddr_read_readdatavalid), //Read Data Valid will be high for each word of data read, but latency varies from read.
    .ddr_read_readdata     (ddr_read_readdata),      //Read Data should only be used if read data valid is high.
-
-//
 // DDR Write Interface
-//
    .ddr_write_clock       (ddr_write_clock),        //Clock for DDR3 Write Logic. Can be connected to "clock"
    .ddr_write_reset       (ddr_write_reset),        //Reset for DDR3 Write Logic. If "ddr_read_clock" is connected to "clock", use "reset" for DDR write logic instead of this wire.
    .ddr_write_address     (ddr_write_address),      //64MB Chunk of DDR3. Word Address (unit of address is 32bit).  
@@ -248,13 +249,18 @@ wire [ 3:0] ddr_write_byteenable;   //Byte enable should be valid when write is 
    .ddr_write_byteenable  (ddr_write_byteenable)    //Byte enable should be valid when write is high.
 );
 
-wire	[1:0]STATE;
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// Logic for displaying Current State of TS_STATE_MACHINE on the 7 - Segment Displays.
 
-localparam Passthrough	= 2'b00;
-localparam Record			= 2'b01;
-localparam Replay			= 2'b10;
+wire	[2:0]STATE;												 // Current State output from TS_STATE_MACHINE.
 
-localparam off	= 7'h7F;
+localparam Passthrough	= 3'd0;							 // Values associated with each state in TS_STATE_MACHINE.
+localparam Record			= 3'd1;
+localparam Replay			= 3'd2;
+localparam Rec_Wait		= 3'd3;
+localparam Rep_Wait		= 3'd4;
+
+localparam off	= 7'h7F;										 // Hex values for displaying values on the 7 - Segment Displays. 
 localparam dash= 7'h3F;
 
 localparam S 	= 7'h12;
@@ -271,11 +277,11 @@ localparam C	= 7'h46;
 assign	HEX_5 = S	;
 assign	HEX_4 = dash;
 
-always @(STATE)	begin
+always @(STATE)	begin										 // Look for change in the current state of TS_STATE_MACHINE.
 	
 	case(STATE)
 		
-		Passthrough	:	begin
+		Passthrough		:	begin								 // 7 - Segment bank displays PASS.
 		
 			HEX_3 <= P;
 			HEX_2 <= A;
@@ -283,7 +289,7 @@ always @(STATE)	begin
 			HEX_0 <= S;
 		end
 		
-		Record		:	begin
+		Record			:	begin								 // 7 - Segment bank displays rEC.
 			
 			HEX_3 <= r;
 			HEX_2 <= E;
@@ -291,7 +297,15 @@ always @(STATE)	begin
 			HEX_0 <= off;
 		end
 		
-		Replay		:	begin
+		Rec_Wait			:	begin								 // 7 - Segment bank displays rEC.
+			
+			HEX_3 <= r;
+			HEX_2 <= E;
+			HEX_1 <= C;
+			HEX_0 <= off;
+		end
+		
+		Replay			:	begin								 // 7 - Segment bank displays PLAY.
 			
 			HEX_3 <= P;
 			HEX_2 <= L;
@@ -299,7 +313,15 @@ always @(STATE)	begin
 			HEX_0 <= Y;
 		end
 		
-		default		:	begin
+		Rep_Wait			:	begin								 // 7 - Segment bank displays PLAY.
+			
+			HEX_3 <= P;
+			HEX_2 <= L;
+			HEX_1 <= A;
+			HEX_0 <= Y;
+		end
+		
+		default			:	begin								 // 7 - Segment bank is off by default.
 		
 			HEX_3 <= off;
 			HEX_2 <= off;
@@ -308,6 +330,8 @@ always @(STATE)	begin
 		end
 	endcase
 end
+
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 /*
  *  DO NOT EDIT BELOW THIS LINE
@@ -462,7 +486,6 @@ end
     );
         
 `endif //USE_HPS_WRAPPER
-
 
 endmodule
 
