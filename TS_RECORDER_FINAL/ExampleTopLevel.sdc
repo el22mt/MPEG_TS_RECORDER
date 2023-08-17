@@ -17,6 +17,7 @@
 # it has a period of 50MHz, and it comes from  the top level
 # port named "clock"
 create_clock -name clock50 -period "50MHz" [get_ports clock]
+create_clock -name clock6  -period "6MHz"  [get_ports TS_CLOCK_IN]
 
 #**************************************************************
 # Create Generated Clock

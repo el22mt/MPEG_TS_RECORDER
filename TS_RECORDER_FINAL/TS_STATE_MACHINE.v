@@ -4,7 +4,7 @@ module TS_STATE_MACHINE(
 	input 		SYS_RESET	,												// Reset signal synchronised to 50 MHz SYS_CLOCK.
 
 	input 		TS_CLOCK_IN	,												// 6 MHz clock signal input and output buffers.
-	input 		TS_RESET		,												// Reset signal synchronised to 6 MHz TS_CLOCK.
+	input 		TS_RESET		,												// Reset signal synchronised to 6 MHz TS_CLOCK_IN.
 	
 	input 		PASS			,												// Input to State Machine for transitioning to PASSTHROUGH State.
 	input 		PLAY			,												// Input to State Machine for transitioning to PLAY State.
@@ -82,18 +82,18 @@ reg  	[9:0]	DATA_OUT	;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Instantiation of Input Buffer:
 
-wire			B_VALID	;														// TS VALID Signal triggered at rising edge of TS_CLOCK.
-wire			B_SYNC	;														// TS SYNC Signal triggered at rising edge of TS_CLOCK.
-wire	[7:0]	B_DATA	;														// TS DATA Lines triggered at rising edge of TS_CLOCK.
+wire			B_VALID	;														// TS VALID Signal triggered at rising edge of TS_CLOCK_IN.
+wire			B_SYNC	;														// TS SYNC Signal triggered at rising edge of TS_CLOCK_IN.
+wire	[7:0]	B_DATA	;														// TS DATA Lines triggered at rising edge of TS_CLOCK_IN.
 
 BUFFER_IP #(																	// Positive edge triggered Input Buffer.
 	.WIDTH		(10)															// 10 - bits wide.
 	)
 	TS_BUFFER_IP(
 	.CLOCK		(TS_CLOCK_IN										),		// 6 MHz TS CLOCK Input.
-	.RESET		(TS_RESET											),		// Reset signal synchronised to TS_CLOCK.
-	.DATA_IN		({TS_VALID_IN, TS_SYNC_IN, TS_DATA_IN}		),		// Inputs form STB Triggered at falling edge of TS_CLOCK.
-	.DATA_OUT	({B_VALID, B_SYNC, B_DATA}						)		// Output signals Triggered at rising edge of TS_CLOCK.
+	.RESET		(TS_RESET											),		// Reset signal synchronised to TS_CLOCK_IN.
+	.DATA_IN		({TS_VALID_IN, TS_SYNC_IN, TS_DATA_IN}		),		// Inputs form STB Triggered at falling edge of TS_CLOCK_IN.
+	.DATA_OUT	({B_VALID, B_SYNC, B_DATA}						)		// Output signals Triggered at rising edge of TS_CLOCK_IN.
 );
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -110,13 +110,13 @@ wire [9 :0]	OUT_stbToMem		;											// Output of FIFO Clocked at 50 MHz.
 FIFO_ASYNC stbToMem (
 
 	.aclr		(TS_RESET						),
-	.data		({B_VALID, B_SYNC, B_DATA}	),								// Data from Input Buffer triggered at rising edge of TS_CLOCK.
+	.data		({B_VALID, B_SYNC, B_DATA}	),								// Data from Input Buffer triggered at rising edge of TS_CLOCK_IN.
 	.rdclk	(SYS_CLOCK						),								// 50 MHz SYS_CLOCK reading data from FIFO.
 	.rdreq	(RD_REQ_stbToMem				),
-	.wrclk	(TS_CLOCK						),								// 6 MHz TS_CLOCK writing data to FIFO.
+	.wrclk	(TS_CLOCK_IN					),								// 6 MHz TS_CLOCK_IN writing data to FIFO.
 	.wrreq	(WR_REQ_stbToMem				),
 	.q			(OUT_stbToMem					),
-	.rdempty	(RD_EMP_stbToMem				),
+	.rdempty	(RD_EMP_stbToMem				)
 //	.wrfull	(WR_FUL_stbToMem				)
 );
 
@@ -137,7 +137,7 @@ FIFO_ASYNC memToStb (
 
 	.aclr		(SYS_RESET						),
 	.data		(IN_memToStb					),
-	.rdclk	(TS_CLOCK						),								// 6 MHz TS_CLOCK reading data from FIFO.
+	.rdclk	(TS_CLOCK_IN					),								// 6 MHz TS_CLOCK_IN reading data from FIFO.
 	.rdreq	(RD_REQ_memToStb				),
 	.wrclk	(SYS_CLOCK						),								// 50 MHz SYS_CLOCK writing data to FIFO.
 	.wrreq	(WR_REQ_memToStb				),
@@ -149,18 +149,18 @@ FIFO_ASYNC memToStb (
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // Instantiation of Output Buffer:
 
-reg			TEMP_VALID	;													// TS VALID Signal triggered at falling edge of TS_CLOCK.
-reg			TEMP_SYNC	;													// TS SYNC Signal triggered at falling edge of TS_CLOCK.
-reg	[7:0]	TEMP_DATA	;													// TS DATA Signal triggered at falling edge of TS_CLOCK.
+reg			TEMP_VALID	;													// TS VALID Signal triggered at falling edge of TS_CLOCK_IN.
+reg			TEMP_SYNC	;													// TS SYNC Signal triggered at falling edge of TS_CLOCK_IN.
+reg	[7:0]	TEMP_DATA	;													// TS DATA Signal triggered at falling edge of TS_CLOCK_IN.
 
 BUFFER_COMB #(
 	.WIDTH		(10)															// 10 - bits wide.
 	)
 	TS_BUFFER_OP(
 	.CLOCK		(TS_CLOCK_IN										),		// 6 MHz TS CLOCK Input.
-	.RESET		(TS_RESET											),		// Reset signal synchronised to TS_CLOCK.
-	.DATA_IN		({TEMP_VALID, TEMP_SYNC, TEMP_DATA}			),		// Inputs Triggered at rising edge of TS_CLOCK.
-	.DATA_OUT	({TS_VALID_OUT, TS_SYNC_OUT, TS_DATA_OUT}	)		// Outputs Triggered at falling edge of TS_CLOCK.
+	.RESET		(TS_RESET											),		// Reset signal synchronised to TS_CLOCK_IN.
+	.DATA_IN		({TEMP_VALID, TEMP_SYNC, TEMP_DATA}			),		// Inputs Triggered at rising edge of TS_CLOCK_IN.
+	.DATA_OUT	({TS_VALID_OUT, TS_SYNC_OUT, TS_DATA_OUT}	)		// Outputs Triggered at falling edge of TS_CLOCK_IN.
 );
 
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -218,10 +218,10 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 					
 						STATE <= REPLAY;
 						
-						//WR_REQ_memToStb	<= 1'b1;
+						WR_REQ_memToStb	<= 1'b1;
 						RD_REQ_memToStb	<= 1'b1;
 						
-						//readRequest			<= 1'b1;
+						readRequest			<= 1'b1;
 					end
 					
 				end
@@ -230,18 +230,18 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 					STATE <= PASSTHROUGH;
 				end
 				
-				TEMP_VALID	= B_VALID	;
-				TEMP_SYNC	= B_SYNC		;
-				TEMP_DATA	= B_DATA		;
+				TEMP_VALID	<= B_VALID	;
+				TEMP_SYNC	<= B_SYNC	;
+				TEMP_DATA	<= B_DATA	;
 			end
 			
 			RECORD:	begin
 			
 				//STATE <= (PASS	)? PASSTHROUGH : RECORD;
 				
-				TEMP_VALID	= B_VALID	;
-				TEMP_SYNC	= B_SYNC		;
-				TEMP_DATA	= B_DATA		;
+				TEMP_VALID	<= B_VALID	;
+				TEMP_SYNC	<= B_SYNC	;
+				TEMP_DATA	<= B_DATA	;
 				
 				writeByteEn  <= 4'hF;
 				  
@@ -268,19 +268,19 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 					STATE <= REC_WAIT;
 				end
 				
-//				if(RD_EMP_stbToMem)	begin
-//					
-//					STATE <= RECORD;
-//				end
+				if(RD_EMP_stbToMem)	begin
+					
+					STATE <= RECORD;
+				end
 			end
 			
 			REC_WAIT:	begin
 			
-				TEMP_VALID	= B_VALID	;
-				TEMP_SYNC	= B_SYNC		;
-				TEMP_DATA	= B_DATA		;
+				TEMP_VALID	<= B_VALID	;
+				TEMP_SYNC	<= B_SYNC	;
+				TEMP_DATA	<= B_DATA	;
 				
-				if(!writeWait)	begin
+				if(!writeWait && !RD_EMP_stbToMem)	begin
 					
 					RD_REQ_stbToMem<= 1'b1;
 
@@ -297,46 +297,30 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 			
 				STATE <= (PASS	)? PASSTHROUGH : REPLAY;
 				
-				if (!WR_FUL_memToStb)	begin
-				
-					readRequest			<= 1'b1;
-					
-					STATE <= REPLAY;
-				end
-				
 				if(!readWait)	begin
-				
-					WR_REQ_memToStb <= 1'b1;
 				  
-					readRequest <= 1'b0;
+					readRequest			<= 1'b0;
 					
 					STATE <= REP_WAIT;
 				end
 
-				TEMP_VALID	= OUT_memToStb[9	];
-				TEMP_SYNC	= OUT_memToStb[8	];
-				TEMP_DATA	= OUT_memToStb[7:0];				
+				TEMP_VALID	<= OUT_memToStb[9];
+				TEMP_SYNC	<= OUT_memToStb[8];
+				TEMP_DATA	<= OUT_memToStb[7 : 0];	
 			end
 			
 			REP_WAIT:	begin
 				
 				if (readValid) begin
-				
-					WR_REQ_memToStb <= 1'b0;
 				  
+					//DATA_OUT		<= readData[31 : 22];
+					
 					IN_memToStb	<= readData[31 : 22];
 						
 					readAddress	<= readAddress + 24'h1;
 					
-					//readRequest <= 1'b1;
-						
-					//STATE <= REPLAY;
-				end
-				
-				if (!WR_FUL_memToStb)	begin
-				
 					readRequest <= 1'b1;
-					
+						
 					STATE <= REPLAY;
 				end
 				else	STATE <= REP_WAIT;
@@ -347,10 +331,12 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 					
 					STATE <= PASSTHROUGH;
 				end
+				
+				DATA_OUT		<=	OUT_memToStb;
 			
-				TEMP_VALID	= OUT_memToStb[9	];
-				TEMP_SYNC	= OUT_memToStb[8	];
-				TEMP_DATA	= OUT_memToStb[7:0];
+				TEMP_VALID	<= OUT_memToStb[9];
+				TEMP_SYNC	<= OUT_memToStb[8];
+				TEMP_DATA	<= OUT_memToStb[7 : 0];
 			end
 			
 			default:	STATE	<=	PASSTHROUGH;
