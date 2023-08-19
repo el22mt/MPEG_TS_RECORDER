@@ -218,7 +218,6 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 					
 						STATE <= REPLAY;
 						
-						WR_REQ_memToStb	<= 1'b1;
 						RD_REQ_memToStb	<= 1'b1;
 						
 						readRequest			<= 1'b1;
@@ -301,6 +300,8 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 				  
 					readRequest			<= 1'b0;
 					
+					WR_REQ_memToStb	<= 1'b1;
+					
 					STATE <= REP_WAIT;
 				end
 
@@ -319,11 +320,21 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 						
 					readAddress	<= readAddress + 24'h1;
 					
+					WR_REQ_memToStb	<= 1'b0;
+					
+					//readRequest <= 1'b1;
+						
+					//STATE <= REPLAY;
+				end
+				//else	STATE <= REP_WAIT;
+				
+				if(!WR_FUL_memToStb)	begin
+					
 					readRequest <= 1'b1;
 						
 					STATE <= REPLAY;
 				end
-				else	STATE <= REP_WAIT;
+				else STATE <= REP_WAIT;
 				
 				if (readAddress == 24'hFFFFFF)	begin
 				  
