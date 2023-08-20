@@ -240,11 +240,11 @@
 					"strict" : false
 				},
 				{
-					"name" : "PASS_IN",
+					"name" : "PLAY_IN",
 					"strict" : false
 				},
 				{
-					"name" : "PLAY_IN",
+					"name" : "PASS_IN",
 					"strict" : false
 				},
 				{

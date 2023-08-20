@@ -74,6 +74,11 @@ wire        readWait;
 ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 // For testing Algorithms:
 
+//reg [31:0]COUNTER;
+
+//genvar W_COUNT;
+//genvar R_COUNT;
+
 reg 	[4:0]W_MSB		= 5'd31;
 reg 	[4:0]R_MSB		= 5'd31;
 
@@ -243,34 +248,31 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 				TEMP_DATA	<= B_DATA	;
 				
 				writeByteEn  <= 4'hF;
-				  
-				if (writeRequest && !writeWait && !writeDone && !RD_EMP_stbToMem) begin
 				
-					RD_REQ_stbToMem<= 1'b0;
+				if(writeDone) begin
 					
-					writeAddress	<= writeAddress + 24'h1	;
-					
-					writeData	   <= {OUT_stbToMem, 22'd0};
-					
-					writeDone		<=	(writeAddress == 24'hFFFFFF);
-				end
-				
-				if (writeDone)	begin
-				  
 					STATE <= PASSTHROUGH;
 				end
-		
-				if (writeWait)	begin
-					
+				else if(writeWait) begin
+				
 					writeRequest <= 1'b0;
+					
+					RD_REQ_stbToMem<= 1'b0;
 					
 					STATE <= REC_WAIT;
 				end
+				else if(!RD_EMP_stbToMem) begin
 				
-				if(RD_EMP_stbToMem)	begin
-					
-					STATE <= RECORD;
+					if (writeRequest && !writeWait && !writeDone) begin
+						
+						writeAddress	<= writeAddress + 24'h1	;
+						
+						writeData	   <= {OUT_stbToMem, 22'd0};
+						
+						writeDone		<=	(writeAddress == 24'hFFFFFF);
+					end
 				end
+				else STATE <= RECORD;
 			end
 			
 			REC_WAIT:	begin
@@ -321,12 +323,7 @@ always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 					readAddress	<= readAddress + 24'h1;
 					
 					WR_REQ_memToStb	<= 1'b0;
-					
-					//readRequest <= 1'b1;
-						
-					//STATE <= REPLAY;
 				end
-				//else	STATE <= REP_WAIT;
 				
 				if(!WR_FUL_memToStb)	begin
 					
