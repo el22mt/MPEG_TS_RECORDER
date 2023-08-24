@@ -79,8 +79,8 @@ wire        readWait;
 //genvar W_COUNT;
 //genvar R_COUNT;
 
-reg 	[4:0]W_MSB		= 5'd31;
-reg 	[4:0]R_MSB		= 5'd31;
+//reg 	[4:0]W_MSB		= 5'd31;
+//reg 	[4:0]R_MSB		= 5'd31;
 
 reg  	[9:0]	DATA_OUT	;
 
@@ -147,7 +147,7 @@ FIFO_ASYNC memToStb (
 	.wrclk	(SYS_CLOCK						),								// 50 MHz SYS_CLOCK writing data to FIFO.
 	.wrreq	(WR_REQ_memToStb				),
 	.q			(OUT_memToStb					),
-//	.rdempty	(RD_EMP_memToStb				),  //replace ~read done later
+//	.rdempty	(RD_EMP_memToStb				),  //(replace ~read done later),(if fifo is empty i.e. no more data to read from memory), (try)
 	.wrfull	(WR_FUL_memToStb				)
 );
 
@@ -179,175 +179,179 @@ localparam REP_WAIT		= 3'd4;
 
 always @(posedge SYS_CLOCK or posedge SYS_RESET)	begin
 
-	if(SYS_RESET)	begin
+////////////////////////////////////////////////////////////// // RESET:
+	if(SYS_RESET)	begin														// If the RESET button is pressed.
 	
-		STATE <= PASSTHROUGH;
+		STATE <= PASSTHROUGH;												// If the current state is PASSTHROUGH.
 		
-		W_MSB	<= 5'd31;
-		R_MSB	<= 5'd31;
+//		W_MSB	<= 5'd31;														// MSBs for Reading and Writing data are set to 31.
+//		R_MSB	<= 5'd31;														// Used for testing algorithms.
 		
-		WR_REQ_stbToMem	<=	1'b0;
-		RD_REQ_stbToMem	<=	1'b0;
+		WR_REQ_stbToMem	<=	1'b0;											// Don't write to stbToMem FIFO.
+		RD_REQ_stbToMem	<=	1'b0;											// Don't read from stbToMem FIFO.
 		
-		writeRequest     	<= 1'b0;
-      writeAddress     	<= 24'h000000;
-      writeData        	<= 32'h00000000;
-      writeByteEn      	<= 4'hF;
-      writeDone        	<= 1'b0;
+		writeRequest     	<= 1'b0;											// Don't write to DDR Memory.
+      writeAddress     	<= 24'h000000;									// Set write address to 0, only on reset, not when write done, to prevent accidental overwriting.
+      writeData        	<= 32'h00000000;								// Set write data to 0.
+      writeByteEn      	<= 4'hF;											// Write to all bytes of memory (can be set to 0 here, try).
+      writeDone        	<= 1'b0;											// De-assert writeDone.
 		
-		WR_REQ_memToStb	<= 1'b0;
-		RD_REQ_memToStb	<= 1'b0;
-		  
-		readRequest      	<= 1'b0;
-		readAddress      	<= 24'h000000;
+		readRequest      	<= 1'b0;											// Don't read from DDR Memory.
+		readAddress      	<= 24'h000000;									// Set read address to 0, also when all the addresses are read from, to allow repeated playback.
+		
+		WR_REQ_memToStb	<= 1'b0;											// Don't write to memToStb FIFO.
+		RD_REQ_memToStb	<= 1'b0;											// Don't read from memToStb FIFO.
+		
 	end
 	else	begin
 	
-		case(STATE)
+		case(STATE)																// Whenever the value of STATE changes.
 		
+////////////////////////////////////////////////////////////// // PASSTHROUGH state:		
 			PASSTHROUGH:	begin
 				
-				if(PLAY || REC)	begin
+				if(PLAY || REC)	begin										// If PLAY or REC buttons are pressed, change STATE.
 				
-					if(REC	)	begin
+					if(REC	)	begin											// If REC button is pressed:
 						
-						STATE <= RECORD;
+						STATE <= RECORD;										// Change STATE to RECORD.
 						
-						WR_REQ_stbToMem	<= 1'b1;
-						RD_REQ_stbToMem	<= 1'b1;
+						WR_REQ_stbToMem	<= 1'b1;							// Start writing to stbToMem FIFO.
+						RD_REQ_stbToMem	<= 1'b1;							// Start reading from stbToMem FIFO.
 						
-						writeRequest		<= 1'b1;
+						writeRequest		<= 1'b1;							// Start writing to DDR memory.
 					end
 					
-					if(PLAY	)	begin
+					if(PLAY	)	begin											// If PLAY button is pressed:
 					
-						STATE <= REPLAY;
+						STATE <= REPLAY;										// Change STATE to REPLAY.
 						
-						RD_REQ_memToStb	<= 1'b1;
+						RD_REQ_memToStb	<= 1'b1;							// Start reading from memToStb FIFO.
 						
-						readRequest			<= 1'b1;
+						readRequest			<= 1'b1;							// Start reading from DDR memory.
 					end
 					
 				end
-				else	begin
+				else	STATE <= PASSTHROUGH;								// else, remain in PASSTHROUGH state.
 				
-					STATE <= PASSTHROUGH;
-				end
-				
-				TEMP_VALID	<= B_VALID	;
-				TEMP_SYNC	<= B_SYNC	;
-				TEMP_DATA	<= B_DATA	;
+				TEMP_VALID	<= B_VALID	;									// BUFFER_COMB receives data form BUFFER_IP.
+				TEMP_SYNC	<= B_SYNC	;									// i.e. data from STB (demodulator) is sent back to STB (processor) for playback.
+				TEMP_DATA	<= B_DATA	;									// STB (demodulator) --> BUFFER_IP --> BUFFER_COMB --> STB (processor).
 			end
 			
+////////////////////////////////////////////////////////////// // RECORD state:			
 			RECORD:	begin
 			
-				//STATE <= (PASS	)? PASSTHROUGH : RECORD;
+				//STATE <= (PASS	)? PASSTHROUGH : RECORD;			// For testing.
 				
-				TEMP_VALID	<= B_VALID	;
-				TEMP_SYNC	<= B_SYNC	;
-				TEMP_DATA	<= B_DATA	;
+				writeByteEn  <= 4'hF;										// Write to all bytes of memory.
 				
-				writeByteEn  <= 4'hF;
-				
-				if(writeDone) begin
+				if(writeDone) begin											// If all the addresses were written to: 
 					
-					STATE <= PASSTHROUGH;
+					STATE <= PASSTHROUGH;									// change STATE to PASSTHROUGH.
 				end
-				else if(writeWait) begin
+				else if(writeWait) begin									// If a write has been accepted by the memory, i.e. data is currently being written:
 				
-					writeRequest <= 1'b0;
+					writeRequest <= 1'b0;									// Don't write to DDR Memory.
 					
-					RD_REQ_stbToMem<= 1'b0;
+					RD_REQ_stbToMem<= 1'b0;									// Don't read from stbToMem FIFO, otherwise data will be lost.
 					
-					STATE <= REC_WAIT;
+					STATE <= REC_WAIT;										// change STATE to REC_WAIT, wait for data to be written.
 				end
-				else if(!RD_EMP_stbToMem) begin
+				else if(!RD_EMP_stbToMem) begin							// If data is present in stbToMem FIFO:
 				
-					if (writeRequest && !writeWait && !writeDone) begin
+				 if(writeRequest && !writeWait && !writeDone) begin// and, writeWait is 0, i.e. no data is being currently written to the memory
 						
-						writeAddress	<= writeAddress + 24'h1	;
+						writeAddress	<= writeAddress + 24'h1	;		// Increment Write Address.
 						
-						writeData	   <= {OUT_stbToMem, 22'd0};
+						writeData	   <= {OUT_stbToMem, 22'd0};		// Write 10-bits of data to 10 MSBs of current Write Address. BUFFER_IP --> stbToMem FIFO --> DDR Memory.
 						
-						writeDone		<=	(writeAddress == 24'hFFFFFF);
+						writeDone		<=	(writeAddress==24'hFFFFFF);// If value of writeAddress reaches the last available address, writeDone = 1;
 					end
 				end
-				else STATE <= RECORD;
+				else STATE <= RECORD;										// else, remain in RECORD state.
+				
+				TEMP_VALID	<= B_VALID	;									// BUFFER_COMB receives data form BUFFER_IP.
+				TEMP_SYNC	<= B_SYNC	;									// i.e. data from STB (demodulator) is sent back to STB (processor) for playback.
+				TEMP_DATA	<= B_DATA	;									// Live video playback does not stop in this state.
 			end
+			
 			
 			REC_WAIT:	begin
-			
-				TEMP_VALID	<= B_VALID	;
-				TEMP_SYNC	<= B_SYNC	;
-				TEMP_DATA	<= B_DATA	;
 				
-				if(!writeWait && !RD_EMP_stbToMem)	begin
+				if(!writeWait && !RD_EMP_stbToMem)	begin				// if writeWait is 0, i.e. data has been written to the memory:
 					
-					RD_REQ_stbToMem<= 1'b1;
+					RD_REQ_stbToMem<= 1'b1;									// Start reading from stbToMem FIFO.
 
-					writeRequest 	<= 1'b1;
+					writeRequest 	<= 1'b1;									// Start writing to DDR memory.
 					
-					STATE <= RECORD;
+					STATE <= RECORD;											// Change STATE to RECORD.
 				end
 				
-				else	STATE <= REC_WAIT;	
+				else	STATE <= REC_WAIT	;									// else, remain in REC_WAIT state, i.e. wait for data to be written to the memory.	
+				
+				TEMP_VALID	<= B_VALID	;									// BUFFER_COMB receives data form BUFFER_IP.
+				TEMP_SYNC	<= B_SYNC	;									// i.e. data from STB (demodulator) is sent back to STB (processor) for playback.
+				TEMP_DATA	<= B_DATA	;									// Live video playback does not stop in this state.
+				
 			end
-		
-			
+
+////////////////////////////////////////////////////////////// // REPLAY state:				
 			REPLAY:	begin
 			
-				STATE <= (PASS	)? PASSTHROUGH : REPLAY;
+				STATE <= (PASS	)? PASSTHROUGH : REPLAY;				// Playback from DDR memory can be stopped by pressing the PASS button, this is not available in the RECORD state.
 				
-				if(!readWait)	begin
+				if(!readWait)	begin											// If data is currently being read from the memory:
 				  
-					readRequest			<= 1'b0;
+					readRequest			<= 1'b0;								// Don't read from DDR Memory.
 					
-					WR_REQ_memToStb	<= 1'b1;
+					WR_REQ_memToStb	<= 1'b1;								// Don't write to memToStb FIFO, otherwise data will be lost.
 					
-					STATE <= REP_WAIT;
+					STATE <= REP_WAIT;										// change STATE to REP_WAIT, wait for data to be read.
 				end
 
-				TEMP_VALID	<= OUT_memToStb[9];
-				TEMP_SYNC	<= OUT_memToStb[8];
-				TEMP_DATA	<= OUT_memToStb[7 : 0];	
+				TEMP_VALID	<= OUT_memToStb[9];							// BUFFER_COMB receives data form DDR Memory.
+				TEMP_SYNC	<= OUT_memToStb[8];							// i.e. data from DDR Memory is sent to STB (processor) for playback.
+				TEMP_DATA	<= OUT_memToStb[7 : 0];						// DDR Memory --> memToStb FIFO --> BUFFER_COMB --> STB.
 			end
+			
 			
 			REP_WAIT:	begin
 				
-				if (readValid) begin
+				if (readValid) begin											// if valid data has been read from the memory:
 				  
 					//DATA_OUT		<= readData[31 : 22];
 					
-					IN_memToStb	<= readData[31 : 22];
+					IN_memToStb	<= readData[31 : 22];					// 10 MSBs from the current readaddress of the memory are sent to the memToStb FIFO.
 						
-					readAddress	<= readAddress + 24'h1;
+					readAddress	<= readAddress + 24'h1;					// Increment Read Address.
 					
-					WR_REQ_memToStb	<= 1'b0;
+					WR_REQ_memToStb	<= 1'b0;								// Stop writing data to the memToStb FIFO (for next cycle).
 				end
 				
-				if(!WR_FUL_memToStb)	begin
+				if(!WR_FUL_memToStb)	begin									// if the memToStb FIFO is not full, i.e. data can still be written to it:
 					
-					readRequest <= 1'b1;
+					readRequest <= 1'b1;										// Read data from DDR Memory.
 						
-					STATE <= REPLAY;
+					STATE <= REPLAY;											// change STATE to REPLAY.
 				end
-				else STATE <= REP_WAIT;
+				else STATE <= REP_WAIT;										// else, remain in REP_WAIT state.
 				
-				if (readAddress == 24'hFFFFFF)	begin
+				if (readAddress == 24'hFFFFFF)	begin					// if all addresses have been read from:
 				  
-					readAddress <= 24'd0;
+					readAddress <= 24'd0;									// Set readAddress to 0, allows user to read the data again. 
 					
-					STATE <= PASSTHROUGH;
+					STATE <= PASSTHROUGH;									// Change STATE to PASSTHROUGH.
 				end
 				
-				DATA_OUT		<=	OUT_memToStb;
+				DATA_OUT		<=	OUT_memToStb;								// Data displayed on LEDs is output of memToStb FIFO.
 			
-				TEMP_VALID	<= OUT_memToStb[9];
-				TEMP_SYNC	<= OUT_memToStb[8];
-				TEMP_DATA	<= OUT_memToStb[7 : 0];
+				TEMP_VALID	<= OUT_memToStb[9];							// BUFFER_COMB receives data form DDR Memory.
+				TEMP_SYNC	<= OUT_memToStb[8];							// i.e. data from DDR Memory is sent to STB (processor) for playback.
+				TEMP_DATA	<= OUT_memToStb[7 : 0];						// DDR Memory --> memToStb FIFO --> BUFFER_COMB --> STB.
 			end
 			
-			default:	STATE	<=	PASSTHROUGH;
+			default:	STATE	<=	PASSTHROUGH;								// Default state is PASSTHROUGH.
 		endcase
 	end
 end
@@ -356,9 +360,9 @@ end
 
 //External interface signals.
 
-assign LED = DATA_OUT;
+assign LED 							= DATA_OUT					;
 
-assign TS_CLOCK_OUT	= TS_CLOCK_IN	;
+assign TS_CLOCK_OUT				= TS_CLOCK_IN				;
 
 assign writeWait					= ddr_write_waitrequest	;
 assign ddr_write_address 		= writeAddress				;

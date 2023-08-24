@@ -1,5 +1,5 @@
 Fitter report for ExampleTopLevel
-Sun Aug 20 01:02:41 2023
+Thu Aug 24 22:25:13 2023
 Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
 
 
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------------------------------------------------+
 ; Fitter Summary                                                                ;
 +---------------------------------+---------------------------------------------+
-; Fitter Status                   ; Successful - Sun Aug 20 01:02:41 2023       ;
+; Fitter Status                   ; Successful - Thu Aug 24 22:25:13 2023       ;
 ; Quartus Prime Version           ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
 ; Revision Name                   ; ExampleTopLevel                             ;
 ; Top-level Entity Name           ; ExampleTopLevel                             ;
@@ -159,14 +159,14 @@ refer to the applicable agreement for further details.
 ; Number detected on machine ; 4           ;
 ; Maximum allowed            ; 4           ;
 ;                            ;             ;
-; Average used               ; 1.17        ;
+; Average used               ; 1.16        ;
 ; Maximum used               ; 4           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   5.9%      ;
-;     Processor 3            ;   5.4%      ;
-;     Processor 4            ;   5.3%      ;
+;     Processor 2            ;   5.7%      ;
+;     Processor 3            ;   5.3%      ;
+;     Processor 4            ;   5.2%      ;
 +----------------------------+-------------+
 
 
@@ -462,7 +462,7 @@ refer to the applicable agreement for further details.
 +--------------+
 ; Pin-Out File ;
 +--------------+
-The pin-out file can be found in C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/output_files/ExampleTopLevel.pin.
+The pin-out file can be found in C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/output_files/ExampleTopLevel.pin.
 
 
 +---------------------------------------------------------------------------------------------+
@@ -3300,7 +3300,7 @@ Info (332111): Found 20 clocks
 Info (176233): Starting register packing
 Info (176235): Finished register packing
     Extra Info (176219): No registers were packed into other blocks
-Info (11798): Fitter preparation operations ending: elapsed time is 00:00:28
+Info (11798): Fitter preparation operations ending: elapsed time is 00:00:29
 Info (170189): Fitter placement preparation operations beginning
 Info (14951): The Fitter is using Advanced Physical Optimization.
 Info (170190): Fitter placement preparation operations ending: elapsed time is 00:00:12
@@ -3313,7 +3313,7 @@ Info (170195): Router estimated average interconnect usage is 1% of the availabl
 Info (170199): The Fitter performed an Auto Fit compilation.  Optimizations were skipped to reduce compilation time.
     Info (170201): Optimizations that may affect the design's routability were skipped
 Info (170194): Fitter routing operations ending: elapsed time is 00:00:12
-Info (11888): Total time spent on timing analysis during the Fitter is 11.66 seconds.
+Info (11888): Total time spent on timing analysis during the Fitter is 11.67 seconds.
 Info (334003): Started post-fitting delay annotation
 Info (334004): Delay annotation completed successfully
 Info (334003): Started post-fitting delay annotation
@@ -3322,96 +3322,96 @@ Info (11801): Fitter post-fit operations ending: elapsed time is 00:00:22
 Warning (171167): Found invalid Fitter assignments. See the Ignored Assignments panel in the Fitter Compilation Report for more information.
 Info (169186): Following groups of pins have the same dynamic on-chip termination control
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[8] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[8] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[0] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[0] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[1] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[1] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[2] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[2] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[3] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[3] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[4] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[4] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[5] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[5] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[6] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[6] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[7] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[7] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[9] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[9] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[10] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[10] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[11] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[11] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[12] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[12] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[13] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[13] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[14] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[14] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[15] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[15] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[16] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[16] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[17] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[17] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[18] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[18] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[19] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[19] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[20] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[20] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[21] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[21] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[22] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[22] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[23] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[23] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[24] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[24] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[25] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[25] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[26] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[26] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[27] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[27] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[28] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[28] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[29] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[29] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[30] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[30] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|delayed_oct
-        Info (169066): Type bi-directional pin memory_mem_dq[31] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
+        Info (169066): Type bi-directional pin memory_mem_dq[31] uses the SSTL-15 Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 81
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|diff_dtc
-        Info (169066): Type bi-directional pin memory_mem_dqs[0] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 82
+        Info (169066): Type bi-directional pin memory_mem_dqs[0] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 82
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|diff_dtc
-        Info (169066): Type bi-directional pin memory_mem_dqs[1] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 82
+        Info (169066): Type bi-directional pin memory_mem_dqs[1] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 82
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|diff_dtc
-        Info (169066): Type bi-directional pin memory_mem_dqs[2] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 82
+        Info (169066): Type bi-directional pin memory_mem_dqs[2] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 82
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|diff_dtc
-        Info (169066): Type bi-directional pin memory_mem_dqs[3] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 82
+        Info (169066): Type bi-directional pin memory_mem_dqs[3] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 82
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[0].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|diff_dtc_bar
-        Info (169066): Type bi-directional pin memory_mem_dqs_n[0] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 83
+        Info (169066): Type bi-directional pin memory_mem_dqs_n[0] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 83
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[1].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|diff_dtc_bar
-        Info (169066): Type bi-directional pin memory_mem_dqs_n[1] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 83
+        Info (169066): Type bi-directional pin memory_mem_dqs_n[1] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 83
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[2].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|diff_dtc_bar
-        Info (169066): Type bi-directional pin memory_mem_dqs_n[2] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 83
+        Info (169066): Type bi-directional pin memory_mem_dqs_n[2] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 83
     Info (169185): Following pins have the same dynamic on-chip termination control: HPSWrapperTop:hps_system|HPSWrapper:hps_qsys_system|HPSWrapper_arm_hps:arm_hps|HPSWrapper_arm_hps_hps_io:hps_io|HPSWrapper_arm_hps_hps_io_border:border|hps_sdram:hps_sdram_inst|hps_sdram_p0:p0|hps_sdram_p0_acv_hard_memphy:umemphy|hps_sdram_p0_acv_hard_io_pads:uio_pads|hps_sdram_p0_altdqdqs:dq_ddio[3].ubidir_dq_dqs|altdq_dqs2_acv_connect_to_hard_phy_cyclonev:altdq_dqs2_inst|diff_dtc_bar
-        Info (169066): Type bi-directional pin memory_mem_dqs_n[3] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 83
-Info (144001): Generated suppressed messages file C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/output_files/ExampleTopLevel.fit.smsg
+        Info (169066): Type bi-directional pin memory_mem_dqs_n[3] uses the Differential 1.5-V SSTL Class I I/O standard File: C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/ExampleTopLevel.v Line: 83
+Info (144001): Generated suppressed messages file C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/output_files/ExampleTopLevel.fit.smsg
 Info: Quartus Prime Fitter was successful. 0 errors, 6 warnings
-    Info: Peak virtual memory: 7376 megabytes
-    Info: Processing ended: Sun Aug 20 01:02:43 2023
-    Info: Elapsed time: 00:02:08
-    Info: Total CPU time (on all processors): 00:04:03
+    Info: Peak virtual memory: 7337 megabytes
+    Info: Processing ended: Thu Aug 24 22:25:15 2023
+    Info: Elapsed time: 00:02:11
+    Info: Total CPU time (on all processors): 00:04:02
 
 
 +----------------------------+
 ; Fitter Suppressed Messages ;
 +----------------------------+
-The suppressed messages can be found in C:/Users/marie/OneDrive/Desktop/TS_RECORDER_FINAL/output_files/ExampleTopLevel.fit.smsg.
+The suppressed messages can be found in C:/Users/marie/Workspace/MPEG_TS_RECORDER/TS_RECORDER_FINAL/output_files/ExampleTopLevel.fit.smsg.
 
 
